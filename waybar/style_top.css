@@ -1,0 +1,97 @@
+* {
+    font-family: "Nunito,Nunito ExtraLight", "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(200, 200, 200, 1.0);
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+window#waybar {
+    background-color: transparent;
+    color: rgba(50, 50, 50, 0.8);
+    border-radius: 8px;
+}
+
+/* Float the top bar. */
+#waybar > box {
+    margin: 6px 8px 0 8px;
+    padding: 2px;
+    background-color: rgba(50, 50, 50, 0.7);
+    border-radius: 15px;
+}
+
+/* Window module becomes transparent when no windows are present in the workspace. */
+window#waybar.empty #window {
+    background: transparent;
+}
+
+.module {
+    border-radius: 15px;
+    padding: 0 15px 0 15px;
+}
+
+#workspaces {
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#workspaces button {
+    padding: 4px;
+    margin: 2px;
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+}
+
+#workspaces button:hover {
+    transition-duration: 400ms;
+    background: rgba(100, 100, 100, 1.0);
+}
+
+#workspaces button:hover label {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+#workspaces button.active,
+#workspaces button.focused,
+#workspaces button.visible {
+    background-color: rgba(0, 180, 0, 1.0);
+}
+
+#workspaces button.active label,
+#workspaces button.focused label,
+#workspaces button.visible label {
+    color: rgba(0, 0, 0, 1.0);
+}
+
+#clock {
+    font-family: "Nunito,Nunito ExtraLight";
+    font-size: 14px;
+    font-weight: 700;
+    padding-right: 20px;
+}
+
+#window label {
+    font-family: "Nunito,Nunito ExtraLight";
+    font-size: 15px;
+    font-weight: 700;
+}
+
+tooltip {
+    background-color: rgba(0, 0, 0, 1.0);
+    border-radius: 10px;
+}
+
+tooltip label {
+    color: rgba(0, 170, 0, 1.0);
+}
+
+#cpu {
+    padding-right: 0;
+}
+
+#disk {
+    padding-left: 0;
+}

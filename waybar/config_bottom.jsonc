@@ -1,0 +1,70 @@
+{
+    "position": "bottom",
+    "layer": "top",
+    // "modules-left": [
+        // "cpu",
+        // "memory",
+        // "disk"
+        // "custom/diskio"
+        // "temperature"
+    // ],
+    "modules-center": [
+        "wlr/taskbar"
+    ],
+    // The styles for the different states was not specified in styles.css since we needed to colour only the icon
+    // "cpu": {
+    //     "interval": 3,
+    //     // "format": "<span font='15' color='#606060'>\uf4bc</span> <span rise='1500' color='#606060'>{usage}%</span> <span rise='1500'>{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} {icon8} {icon9} {icon10} {icon11} {icon12} {icon13} {icon14} {icon15} {icon16} {icon17}</span>",
+    //     // "format-normal": "<span font='15' color='#00aa00'>\uf4bc</span> <span rise='1500' color='#606060'>{usage}%</span> <span rise='1500'>{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} {icon8} {icon9} {icon10} {icon11} {icon12} {icon13} {icon14} {icon15} {icon16} {icon17}</span>",
+    //     // "format-critical": "<span font='15' color='#aa0000'>\uf4bc</span> <span rise='1500' color='#aa0000'>{usage}%</span> <span rise='1500'>{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} {icon8} {icon9} {icon10} {icon11} {icon12} {icon13} {icon14} {icon15} {icon16} {icon17}</span>",
+    //     "format": "<span font='12' color='#606060'>\uf4bc</span> <span rise='500'>{usage}%</span> <span rise='1500'>{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} {icon8} {icon9} {icon10} {icon11} {icon12} {icon13} {icon14} {icon15} {icon16} {icon17}</span>",
+    //     "format-normal": "<span font='12' color='#00aa00'>\uf4bc</span> <span rise='500'>{usage}%</span> <span rise='1500'>{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} {icon8} {icon9} {icon10} {icon11} {icon12} {icon13} {icon14} {icon15} {icon16} {icon17}</span>",
+    //     "format-critical": "<span font='12' color='#aa0000'>\uf4bc</span> <span rise='500'>{usage}%</span> <span rise='1500'>{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} {icon8} {icon9} {icon10} {icon11} {icon12} {icon13} {icon14} {icon15} {icon16} {icon17}</span>",
+    //     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    //     "tooltip": "true",
+    //     "states": {
+    //         "critical": 60,
+    //         "normal": 0
+    //     }
+    // },
+    // "memory": {
+    //     "interval": 3,
+    //     "format": "<span font='12' rise='2000' color='#606060'>\uefc5</span> <span rise='2000'>{percentage}% [{used:0.2f}/{total:0.f}GiB]</span>  <span font='16'>\udb83\udfb5</span> <span rise='1500'>{swapPercentage}%</span>",
+    //     "format-critical": "<span font='12' rise='2000' color='#aa0000'>\uefc5</span> <span rise='2000'>{percentage}% [{used:0.2f}/{total:0.2f}GiB]</span>  <span font='16'>\udb83\udfb5</span> <span rise='1500'>{swapPercentage}%</span>",
+    //     "format-normal": "<span font='12' rise='2000' color='#00aa00'>\uefc5</span> <span rise='2000'>{percentage}% [{used:0.2f}/{total:0.2f}GiB]</span>  <span font='16'>\udb83\udfb5</span> <span rise='1500'>{swapPercentage}%</span>",
+    //     "tooltip": "true",
+    //     "states": {
+    //         "critical": 70,
+    //         "normal": 0
+    //     }
+    // },
+    // "temperature": {
+    //     "on-click": "gnome-system-monitor",
+    //     "interval": 20,
+    //     "format": "\udb80\udfc8 {temperatureC}°C",
+    //     "format-critical": "<span color='#aa0000'>\udb80\udfc8</span> {temperatureC}°C"
+    // },
+    // "disk": {
+    //     "interval": 120,
+    //     "format": "<span font='17'>\udb80\udeca</span> <span rise='1500'>{percentage_used}% [{specific_used:0.2f}/{specific_total:0.2f}GiB]  <span font='17' rise='-900'>\udb80\uddbc</span> {specific_free:0.2f}GiB</span>",
+    //     "unit": "GiB"
+    // },
+    // "custom/diskio": {
+    //     "on-click": "gnome-system-monitor",
+    //     "interval": 3,
+    //     "exec": "~/.config/waybar/scripts/diskio.sh nvme0n1",
+    //     "return-type": "json"
+    // },
+    "wlr/taskbar": {
+        "all-outputs": "false",
+        "format": "{icon}",
+        "icon-size": 25,
+        "tooltip": "false",
+        "tooltip-format": "{app_id} · {title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        }
+    }
+}

@@ -1,0 +1,78 @@
+* {
+    font-family: "Nunito,Nunito ExtraLight", "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(200, 200, 200, 1.0);
+    background: transparent;
+}
+
+.module {
+    padding: 0 10px;
+}
+
+.modules-left {
+    background: rgba(0, 0, 0, 0.7);
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+}
+
+#taskbar {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border-color: transparent;
+    padding: 5px;
+    margin: 5px;
+    transition-duration: 500ms;
+}
+
+#taskbar button {
+    border-color: transparent;
+    border-radius: 15px;
+    padding: 5px 15px;
+    box-shadow: none;
+}
+
+#taskbar button:hover {
+    border-width: 1px;
+    background: rgba(60, 60, 60, 0.5);
+}
+
+#taskbar button.active {
+    background-color: rgba(0, 175, 0, 0.5);
+}
+
+#custom-diskio.true {
+    color: rgba(255, 204, 0, 1.0);
+}
+
+#taskbar.empty {
+    border: transparent;
+    background: transparent;
+    transition-duration: 500ms;
+}
+
+#cpu {
+    font-family: "JetBrainsMono Nerd Font", "Cascadia Code NF";
+    margin: 0;
+}
+
+#memory {
+    font-family: "JetBrainsMono Nerd Font", "Cascadia Code NF";
+    margin: 0;
+}
+
+#disk {
+    font-family: "JetBrainsMono Nerd Font", "Cascadia Code NF";
+    margin: 0;
+}
+
+tooltip {
+    background-color: rgba(0, 0, 0, 1.0);
+    border-radius: 10px;
+}
+
+tooltip label {
+    font-family: "Nunito,Nunito ExtraLight";
+    color: rgba(0, 170, 0, 1.0);
+}

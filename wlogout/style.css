@@ -1,0 +1,65 @@
+* {
+	text-shadow: none;	
+	background-image: none;
+	box-shadow: none;
+	outline-style: none;
+}
+
+window {
+	background-color: rgba(12, 12, 12, 0.9);
+}
+
+button {
+	color: rgba(190, 190, 190, 0.9);
+
+	border-radius: 15px;
+	border-color: transparent;
+
+	margin: 5px;
+	font-family: "Nunito,Nunito ExtraLight";
+	font-size: 30px;
+	font-weight: 900;
+/* 
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center; */
+}
+
+button:focus {
+	color: rgba(70, 70, 70, 0.9);
+	background-color: rgba(200, 200, 200, 0.9);
+}
+
+button:active, button:hover {
+	color: rgba(0, 0, 0, 1.0);
+	background-color: rgba(0, 130, 0, 0.9);
+}
+
+label {
+	margin-top: -1100px;
+}
+
+/* #lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+	background-image: image(url("/home/vallu/.config/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+} */

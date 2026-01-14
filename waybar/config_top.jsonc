@@ -1,0 +1,147 @@
+{
+    "position": "top",
+    "layer": "top",
+
+    "modules-left": [
+        "custom/archicon",
+        "hyprland/workspaces",
+        "hyprland/submap",
+        "cpu",
+        "memory",
+        "disk"
+    ],
+
+    "modules-center": [
+        "hyprland/window"
+    ],
+
+    "modules-right": [
+        "backlight",
+        "pulseaudio",
+        "battery",
+        "network",
+        "bluetooth",
+        "clock"
+
+    ],
+
+    "clock": {
+        "format": "{:%a  %d/%m  <span color='#00aa00' weight='900'>%I:%M%p</span>}"
+    },
+
+    "battery": {
+        "format": "{capacity}% <span font='13'>{icon}</span>",
+        "format-critical": "<span rise='1500'>{capacity}%</span> <span font='13' color='#bb2000'>{icon}</span>",
+        "format-warning": "<span rise='1500'>{capacity}%</span> <span font='13' color='#ff9000'>{icon}</span>",
+        "format-normal": "<span rise='1500'>{capacity}%</span> <span font='13' color='#00aa00'>{icon}</span>",
+        "format-charging": "<span rise='1500'>{capacity}%</span> <span font='13' color='#00aa00'>{icon}</span>  <span rise='700' color='#00aa00' font='12'>\udb85\udc0c</span>",
+        "format-full": "<span rise='1500'>{capacity}%</span> <span rise='500' font='13'>{icon}</span>",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+        "states": {
+            "critical": 20,
+            "warning": 40,
+            "normal": 100
+        }
+    },
+
+    "bluetooth": {
+        "on-click-middle": "bluetoothctl power off",
+        "on-click-right": "bluetoothctl power on",
+        "format": "B_UNK:{controller_alias}:?",
+        "format-off": "<span font='14'>\udb80\udcb2</span>",
+        "format-on": "<span color='#ff9000' font='14'>\udb80\udcaf</span>",
+        "format-connected": "<span font='14' color='#00aa00'>\udb80\udcb1</span>",
+        "tooltip": "true",
+        "tooltip-format": "{controller_address}  •  {controller_alias}  •  {status}  •  {num_connections}",
+        "tooltip-markup": "true"
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "<span rise='1000'>{percent}%</span> <span font='12'>{icon}</span>",
+        "format-icons": ["\udb80\udcde", "\udb80\udce0", "\udb80\udcda"],
+        "tooltip": "true",
+        "tooltip-format": "BRIGHTNESS {percent}%",
+        "scroll-step": 5
+    },
+
+    "network": {
+        "on-click-middle": "nmcli radio wifi off",
+        "on-click-right": "nmcli radio wifi on",
+        "format": "N_UNK:{ifname}:?",
+        "format-wifi": "<span color='#00aa00'>\uf1eb</span>",
+        "format-ethernet": "<span color='#00aa00' font='15'>\udb80\ude01</span>",
+        "format-disconnected": "<span font='14' color='#ff9000'>\ueb01</span>",
+        "format-disabled": "<span color='#ff5000' font='14'>\udb84\udf83</span>",
+        "tooltip": "true",
+        "tooltip-format": "<span color='#aaaaaa'>CTRLLER</span> {ifname}  <span color='#aaaaaa'>SSID</span> {essid}  <span color='#aaaaaa'>IP</span> {ipaddr}  <span color='#aaaaaa'>FREQ</span> {frequency}GHz  <span color='#aaaaaa'>STRENGTH</span> {signalStrength}%",
+        "tooltip-markup": "true"
+    },
+
+    "pulseaudio": {
+        // "on-click": "pavucontrol",
+        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ 1",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ 0",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% <span font='15'>{icon} \udb80\udcaf</span>",
+        "format-muted": "\uf466",
+        "format-icons": {
+            "headphone": "\uee58",
+            "headset": "\uee58",
+            "default": ["\uf027", "\uf028"]
+        },
+        "scroll-step": 2,
+        "tooltip": "true",
+        "tooltip-format": "<span color='#aaaaaa'>VOLUME</span> {volume}% [{desc}]",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}"
+    },
+
+    "hyprland/window": {
+        "format": "{class} · {title}",
+        "max-length": 48
+    },
+
+    // The styles for the different states was not specified in styles.css since we needed to colour only the icon
+    "cpu": {
+        "interval": 3,
+        "format": "<span font='12' color='#606060'>\uf4bc</span> <span rise='500'>{usage}%</span>",
+        "format-normal": "<span font='12' color='#00aa00'>\uf4bc</span> <span rise='500'>{usage}%</span>",
+        "format-critical": "<span font='12' color='#aa0000'>\uf4bc</span> <span rise='500'>{usage}%</span>",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "tooltip": "true",
+        "states": {
+            "critical": 60,
+            "normal": 0
+        }
+    },
+
+    "memory": {
+        "interval": 3,
+        "format": "<span font='12' rise='2000' color='#606060'>\uefc5</span> <span rise='2000'>{percentage}%</span>  <span rise='1500' font='12'>\udb83\udfb5</span>  <span rise='1500'>{swapPercentage}%</span>",
+        "format-critical": "<span font='12' rise='2000' color='#aa0000'>\uefc5</span> <span rise='2000'>{percentage}%</span>  <span rise='1500' font='12'>\udb83\udfb5</span>  <span rise='1500'>{swapPercentage}%</span>",
+        "format-normal": "<span font='12' rise='2000' color='#00aa00'>\uefc5</span> <span rise='2000'>{percentage}%</span>  <span rise='1500' font='12'>\udb83\udfb5</span>  <span rise='1500'>{swapPercentage}%</span>",
+        "tooltip": "true",
+        "states": {
+            "critical": 70,
+            "normal": 0
+        }
+    },
+
+    "disk": {
+        "interval": 120,
+        "format": "<span rise='-4000' font='13'>\udb80\udeca</span>  <span rise='-2500'>{percentage_used}%</span>",
+        "unit": "GiB"
+    },
+
+    "custom/archicon": {
+        "on-click": "",
+        "format": "<span rise='2300'>i use</span> <span color='#1793D1' font='15'>\udb82\udcc7</span>  <span rise='2300'>btw</span>",
+        "tooltip": "true",
+        "tooltip-format": "<span color='#ffffff'>OS</span> Arch Linux\n<span color='#ffffff'>WIN_MGR</span> Hyprland\n<span color='#ffffff'>STATUS_BAR</span> Waybar\n\n\"We all know Linux is great... \nit does infinite loops in 5 seconds.\"\n\n\"Only wimps use tape backup: \nreal men just upload their important \nstuff on ftp, and let the rest of the \nworld mirror it.\"\n\n\"… the Linux philosophy is 'laugh in \nthe face of danger.' Oops. Wrong one. \n'Do it yourself.' That's it.\"\n\n\"My name is Linus Torvalds and I am \nyour god.\"",
+        "tooltip-markup": "true"
+    }
+}
